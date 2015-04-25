@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest>
+  <remote name="benesch" fetch="."/>
+  <remote name="seL4" fetch="../seL4"/>
+
+  <default revision="master" remote="seL4"/>
+
+  <!-- Kernel -->
+  <project name="seL4.git" path="kernel">
+    <linkfile src="libsel4" dest="libs/libsel4"/>
+  </project>
+
+  <!-- Tools -->
+  <project name="camkes-tool.git" path="tools/camkes">
+    <linkfile src="toplevel.mk" dest="Makefile"/>
+    <linkfile src="Kbuild" dest="Kbuild"/>
+    <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
+  </project>
+  <project name="capDL-tool.git" path="tools/capDL"/>
+  <project name="common-tool.git" path="tools/common" remote="benesch"/>
+  <project name="elfloader-tool.git" path="tools/elfloader"/>
+  <project name="kbuild-tool.git" path="tools/kbuild" remote="benesch"/>
+  <project name="pruner.git" path="tools/pruner"/>
+  <project name="python-capdl-tool.git" path="tools/python-capdl"/>
+
+  <!-- Libraries -->
+  <project name="libcpio.git" path="libs/libcpio"/>
+  <project name="libelf.git" path="libs/libelf"/>
+  <project name="libplatsupport.git" path="libs/libplatsupport" remote="benesch"/>
+  <project name="libsel4bench.git" path="libs/libsel4bench"/>
+  <project name="libsel4debug.git" path="libs/libsel4debug"/>
+  <project name="libsel4muslcsys.git" path="libs/libsel4muslccamkes" revision="camkes"/>
+  <project name="libsel4muslcsys.git" path="libs/libsel4muslcsys" revision="master"/>
+  <project name="libsel4platsupport.git" path="libs/libsel4platsupport" remote="benesch"/>
+  <project name="libsel4simple-default.git" path="libs/libsel4simple-default"/>
+  <project name="libsel4simple.git" path="libs/libsel4simple"/>
+  <project name="libsel4sync.git" path="libs/libsel4sync"/>
+  <project name="libsel4utils.git" path="libs/libsel4utils" remote="benesch"/>
+  <project name="libsel4vka.git" path="libs/libsel4vka"/>
+  <project name="libsel4vspace.git" path="libs/libsel4vspace"/>
+  <project name="libutils.git" path="libs/libutils"/>
+  <project name="musllibc.git" path="libs/libmuslc" remote="benesch"/>
+
+  <!-- CAmkES apps -->
+  <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental"/>
+
+  <!-- Projects -->
+  <project name="schedul4.git" path="projects/schedul4" remote="benesch">
+    <linkfile src="Kconfig" dest="Kconfig"/>
+    <linkfile src="configs" dest="configs"/>
+    <linkfile src="docs/README.md" dest="README.md"/>
+    <linkfile src="apps/ipcbench" dest="apps/ipcbench"/>
+  </project>
+</manifest>
