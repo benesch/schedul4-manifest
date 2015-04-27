@@ -38,10 +38,10 @@ $ vagrant ssh
 # hack away
 ```
 
-Upon login, you'll be dropped into the project root at
-`/vagrant/project`. This directory is automatically synced with
-`THIS_REPO/project/` on your host machine, so you can edit files with
-your text editor of choice, and run only `make` via SSH.
+Upon login, `cd` into the project root at `/vagrant/project`. This
+directory is automatically synced with `THIS_REPO/project/` on your host
+machine, so you can edit files with your text editor of choice, and run
+only `make` via SSH.
 
 On OS X, the fastest way to install Vagrant is through [Homebrew's][homebrew]
 [Cask plugin][homebrew-cask]:
@@ -62,7 +62,14 @@ On Windows and Linux, download the official installers for both:
 To build an application into a runnable kernel image:
 
 ```bash
-$ make APPLICATION_defconfig
+$ make APPLICATION_platform_defconfig
+$ make
+```
+
+To build the ipcbench application in the Vagrant box, for example:
+
+```bash
+$ make ipcbench_debian_defconfig
 $ make
 ```
 
