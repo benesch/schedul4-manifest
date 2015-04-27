@@ -7,7 +7,7 @@
   <default revision="master" remote="seL4"/>
 
   <!-- Kernel -->
-  <project name="seL4.git" path="kernel">
+  <project name="seL4.git" path="kernel" remote="benesch" revision="schedul4">
     <linkfile src="libsel4" dest="libs/libsel4"/>
   </project>
 
@@ -43,7 +43,7 @@
   <project name="musllibc.git" path="libs/libmuslc" remote="benesch"/>
 
   <!-- CAmkES apps -->
-  <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental"/>
+  <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental" remote="benesch" revision="schedul4"/>
 
   <!-- Projects -->
   <project name="schedul4.git" path="projects/schedul4" remote="benesch">

@@ -79,6 +79,36 @@ $ qemu-system-i386 -nographic -m 512 \
 
 To escape from QEMU, press Ctrl-A, X.
 
+## The challenge
+
+Ping and Pong are trying to have a conversation, but Guzzle keeps
+stealing their CPU! The scheduler currently likes Ping, Pong, and Guzzle
+equally.
+
+Modify this round-robin scheduler in
+`apps/capdl-loader-experimental/src/main.c` to minimize Ping and Pong's
+interprocess communication (IPC) latency. You'll probably find the
+following two system calls helpful:
+
+```c
+seL4_TCB_Activate(seL4_CPtr tcb_capability);
+seL4_TCB_GetPreemptionCount(seL4_CPtr tcb_capability);
+```
+
+`seL4_TCB_Activate` will immediately switch to the thread referred to by
+`tcb_capability`. A list of all running threads at system bootup is
+contained within the global `threads` array.
+
+`seL4_TCB_GetPreemptionCount` will return the number of times that the
+given thread has been forcibly removed from the CPU due to a timer
+interrupt. This is a rough measure of how naughty a process is. But
+calling this once per process per scheduling request will incur substantial
+overhead.
+
+A stellar implementation would minimize the latency of well-behaved
+processes like Ping and Pong while allowing naughty processes like
+Guzzle to complete eventually.
+
 [camkes-getting-started]: https://sel4.systems/CAmkES/GettingStarted.pml
 [cs260r]: http://read-new.seas.harvard.edu/cs260r/2015/w/Main_Page
 [homebrew]: http://brew.sh
