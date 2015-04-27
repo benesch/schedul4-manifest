@@ -33,7 +33,7 @@ most easily installed with [Vagrant], a command-line wrapper around
 VirtualBox. From this directory, run:
 
 ```bash
-$ vagrant up --no-provision
+$ vagrant up
 $ vagrant ssh
 # hack away
 ```
