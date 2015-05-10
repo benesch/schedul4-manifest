@@ -12,7 +12,7 @@
   </project>
 
   <!-- Tools -->
-  <project name="camkes-tool.git" path="tools/camkes">
+  <project name="camkes-tool.git" path="tools/camkes" remote="benesch">
     <linkfile src="toplevel.mk" dest="Makefile"/>
     <linkfile src="Kbuild" dest="Kbuild"/>
     <linkfile src="libsel4camkes" dest="libs/libsel4camkes"/>
