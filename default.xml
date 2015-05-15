@@ -7,7 +7,7 @@
   <default revision="master" remote="seL4"/>
 
   <!-- Kernel -->
-  <project name="seL4.git" path="kernel" remote="benesch" revision="schedul4">
+  <project name="seL4.git" path="kernel" remote="benesch" branch="proto2">
     <linkfile src="libsel4" dest="libs/libsel4"/>
   </project>
 
@@ -33,7 +33,7 @@
   <project name="libsel4muslcsys.git" path="libs/libsel4muslccamkes" revision="camkes"/>
   <project name="libsel4muslcsys.git" path="libs/libsel4muslcsys" revision="master"/>
   <project name="libsel4platsupport.git" path="libs/libsel4platsupport" remote="benesch"/>
-  <project name="libsel4simple-default.git" path="libs/libsel4simple-default"/>
+  <project name="libsel4simple-default.git" path="libs/libsel4simple-default" remote="benesch" branch="proto2"/>
   <project name="libsel4simple.git" path="libs/libsel4simple"/>
   <project name="libsel4sync.git" path="libs/libsel4sync"/>
   <project name="libsel4utils.git" path="libs/libsel4utils" remote="benesch"/>
@@ -43,7 +43,7 @@
   <project name="musllibc.git" path="libs/libmuslc" remote="benesch"/>
 
   <!-- CAmkES apps -->
-  <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental" remote="benesch" revision="schedul4"/>
+  <project name="capdl-loader-app.git" path="apps/capdl-loader-experimental" remote="benesch" branch="proto2"/>
 
   <!-- Projects -->
   <project name="schedul4.git" path="projects/schedul4" remote="benesch">
